@@ -1,0 +1,21 @@
+{%extends 'base.html'%}
+
+
+{%block content%}
+
+
+        <table style='border: 1px solid black' class='text-white w-full mt-3'>
+            <tr>
+                <th>Blog Title</th>
+                <th>publication date</th>
+            </tr>
+            {%for post in author_posts %}
+            <tr>
+                <td class='p-3'><a href= '{%url 'core:details' post.id %}' class="font-bold hover:text-teal-400 hover:underline">{{post.title}}</a></td>
+                <td class='p-3'>{{post.publication_date}}</td>
+            </tr>
+            {%endfor%}
+        </table>
+
+
+{%endblock%}

@@ -1,0 +1,13 @@
+{%extends 'base.html' %}
+
+
+{%block content%}
+
+  <div class='bg-gray-800 m-12 rounded-xl' >
+    <div class='p-6'>
+    <p class='text-white text-2xl font-bold'>{{blog.title}}.</p>
+    <p class='text-white mx-4'>{{blog.content}}</p>
+    <p class='text-black  bg-gray-300 font-bold rounded-xl w-60 text-center'>{{blog.publication_date}}</p>
+    </div>
+  </div>
+{%endblock%}

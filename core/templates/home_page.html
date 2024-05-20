@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+
+
+{%block content%}
+    {% comment %} {%if blogs%}
+   
+        {%for blog in blogs%}
+        <div class="px-6 py-3 flex  justify-between  bg-gray-900 text-white my-3">
+        <a href='{%url 'core:details' blog.id %}' class="text-2xl font-bold">Blog : {{blog.title}}</a>
+        <div class='space-x-6'>
+            <a href='{%url 'core:authorposts' blog.author %}' class='text-2xl font-bold'>author: <strong class='text-teal-500 underline'>{{blog.author}}</strong></a>
+            <a href='{%url 'core:authorposts' blog.author %}' class='text-2xl font-bold'>Published on: <strong class='text-teal-500 underline'>{{blog.publication_date}}</strong></a>
+        </div>
+    </div>
+        {%endfor%}
+   
+
+    
+    {%else%}
+        <p >No blogs Published yet</p>
+    {%endif%}
+</div>
+
+   {% comment %} <img src="{% static 'crud/teddy_bear.jpg' %}" alt="My image"> {% endcomment %}
+   {% comment %} <h1>This is students list page</h1> {% endcomment %} 
+{%if blogs %}
+   <table style='border: 1px solid black' class='text-white w-full mt-3'>
+       <tr>
+           <th>Blog Title</th>
+           <th>Blog Author</th>
+           <th>publication date</th>
+       </tr>
+       {%for blog in blogs%}
+       <tr>
+           <td class='p-3'><a href= '{%url 'core:details' blog.id %}' class="font-bold hover:text-teal-400 hover:underline">{{blog.title}}</a></td>
+           <td class='p-3'><a href= '{%url 'core:authorposts' blog.author %}' class="font-bold hover:text-teal-400 hover:underline">{{blog.author}}</a></td>
+           <td class='p-3'>{{blog.publication_date}}</td>
+       </tr>
+       {%endfor%}
+   </table>
+
+{%else%}
+<p>student does not exist</p>
+{%endif%}
+<a href='#'>Add New Students</a>
+
+{%endblock%}
+
+{% comment %} <div class='px-4 py-3  grid grid-cols-4 gap-2  rounded-xl text-white'> {% endcomment %}
+    {% comment %} {%for blog in blogs%}
+
+    <a href='#' class='bg-gray-900 px-6 py-3 rounded-xl'>
+            <p>Title : {{blog.title}}</p>
+            <p>Published on :{{blog.publication_date}}</p>
+            <a href='#' class='block'>Authot : {{blog.author}}<>
+    </a>
+
+    {%endfor%} {% endcomment %}

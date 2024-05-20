@@ -1,0 +1,28 @@
+{%extends 'base.html' %}
+
+{%block content%}
+    <div class='bg-gray-800 text-center m-12 rounded-xl'>
+        <h1 class='text-2xl font-bold text-teal-300 my-3'>Add New Blogs Here</h1>
+    <form action=" " method="POST">
+        {% csrf_token %}
+        <div >
+            {% comment %} <label for="title">title</label> {% endcomment %}
+            {{form.title}}
+        </div>
+        <div>
+            {% comment %} <label for="content">Content</label> {% endcomment %}
+            {{form.content}}
+        </div>
+        <div>
+            {% comment %} <label for="published_date">published Date</label> {% endcomment %}
+            {% comment %} <input type="date" name="published_date" id="published_date"> {% endcomment %}
+            {{form.publication_date}}
+        </div>
+        <div>
+            {% comment %} <label for="author">Author</label> {% endcomment %}
+            {{form.author}}
+        </div>
+        <button type='submit' class='font-bold text-1xl bg-green-600 px-6 py-2 my-3  shadow-md hover:shadow-teal-200 hover:scale-105 hover:bg-green-600 transition-all duration-300 rounded-xl'>Add blog</button>
+    </form></div>
+
+{%endblock%}
