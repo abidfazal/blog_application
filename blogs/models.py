@@ -21,7 +21,7 @@ class BlogPost(models.Model):
         return self.title
     
 
-class Comment(models.modes):
+class Comment(models.Model):
     comment_id = models.IntegerField()
     comment = models.CharField(max_length=200)
 
